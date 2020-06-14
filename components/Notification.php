@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sergej
- * Date: 08.10.2018
- * Time: 11:42
- */
 
 namespace backend\components;
 
@@ -182,16 +176,6 @@ class Notification extends BaseNotification
             }
         }
         return $result;       
-    }
-
-    public function getQueryUserName()
-    {
-       return ($this->queryData->usersData)?$this->queryData->usersData->fullname:'';
-    }
-
-    public function getQuerySmiName()
-    {
-        return ($this->queryData->pFSmiData)?$this->queryData->pFSmiData->name:'';
     }
 
     public function getNameBell()
