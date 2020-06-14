@@ -20,7 +20,6 @@ class NotificationAddBehavior extends Behavior
     protected $_field = [];
     protected $_time_before = [];
     protected $_is_check = [];
-    protected $UserObject;
     protected $_changeAttr = [];
     protected $duplicate = [];
     protected $oldAttributes;
