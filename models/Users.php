@@ -2,7 +2,7 @@
 
 namespace backend\models;
 
-use common\behaviors\NotificationAddBehavior;
+use backend\components\behaviors\NotificationAddBehavior;
 
 use backend\models\manager_notification\notifications\AppointedManager;
 use backend\models\manager_notification\notifications\SellCall;
