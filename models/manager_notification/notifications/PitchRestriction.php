@@ -51,18 +51,18 @@ class PitchRestriction implements KeyNotification, BellsNotification, EmailNotif
         switch ($model->key) {
            
             case self::KEY_CHANGE_COMPANY:
-                $user = \backend\models\ar\ArCompany::getById($model->key_id);
+                $user = \backend\models\Company::findOne($model->key_id);
                 return \Yii::t('admin','Company change').' '.$user->name;
             break;
 
             case self::KEY_PAY_INVOICE:
-                $invoice = \backend\models\ar\ArInvoice::findOne($model->key_id);
+                $invoice = \backend\models\Invoice::findOne($model->key_id);
                 return \Yii::t('admin', 'Invoice paid').' №'.$invoice->number;
             break;
            
            
             case self::KEY_NEW_INVOICE_VP:
-                $model = \backend\models\ar\ArInvoiceVp::findOne($model->key_id);
+                $model = \backend\models\InvoiceVp::findOne($model->key_id);
                 return \Yii::t('admin', 'New project invoice created'). ' '.$model->number;
             break;
             case self::KEY_NEW_AKT_VP:
@@ -78,8 +78,8 @@ class PitchRestriction implements KeyNotification, BellsNotification, EmailNotif
                 return ['/manager-notification', 'Search[id]' => $id];
             break;
             case self::KEY_PAY_INVOICE:
-                $invoice = \backend\models\ar\ArInvoice::findOne($key_id);
-                return ['/invoices/list', 'Search[number]' => $invoice->number];
+                $invoice = \backend\models\Invoice::findOne($key_id);
+                return ['/invoices/index', 'Search[number]' => $invoice->number];
             break;          
             case self::KEY_NEW_INVOICE_VP:
          
