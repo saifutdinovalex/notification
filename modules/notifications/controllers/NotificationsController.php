@@ -53,15 +53,7 @@ class NotificationsController extends Controller
             ->where([$class::tableName().'.user_id' => $this->user_id])
             ->andWhere(['seen' => $seen])
             ->andWhere(['<=', $class::tableName().'.created_at', date('Y-m-d H:i:s')])
-            ->andWhere(['key' => \backend\components\Notification::getListKeyNotification()])
-            ->joinWith([
-                            'usersData us', 
-                            'queryData' => function($q){
-                                $q->joinWith(['usersData uq']);
-                            }, 
-                            'queryData.pFSmiData',
-                            'userSmiData usmi',
-                        ])
+            ->andWhere(['key' => \backend\components\Notification::getListKeyNotification()])           
             ->orderBy($class::tableName().'.created_at DESC');
         
 
