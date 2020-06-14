@@ -41,7 +41,7 @@ class SellCall implements KeyNotification, ModalNotification, ModalPriority
     {
         switch ($key) {
             case static::KEY_SELL_CALL_5M:
-                return ['/user/view', 'user_id' => $key_id];
+                return ['/user/view', 'id' => $key_id];
             break;
         };
 
